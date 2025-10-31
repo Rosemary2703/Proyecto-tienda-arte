@@ -1,0 +1,184 @@
+/* 🔹 Contenedor principal de la página */
+.homeContainer {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #faf8f2;
+}
+
+/* 🔹 Título */
+.pageTitle {
+  font-size: 2rem;
+  color: #3e2723;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* 🔹 Mensaje de error */
+.errorMessage {
+  color: #b71c1c;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* 🔹 Contenedor de todas las tarjetas (para Home) */
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 35px; /* Más espacio entre tarjetas */
+  justify-items: center;
+  align-items: stretch;
+  padding: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🔹 Grid de productos (para página de catálogo) */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 40px; /* 🔹 Más espacio entre obras para mostrar bien las estrellas */
+  justify-items: center;
+  align-items: stretch;
+  padding: 35px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* 🔹 Tarjeta individual de obra */
+.artworkCard {
+  background-color: #fffaf0;
+  border-radius: 14px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+  max-width: 260px;
+}
+
+.artworkCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Imagen de la obra */
+.artworkImage {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* 🔹 Título y precio */
+.artworkTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3e2723;
+  margin: 10px 0 5px;
+}
+
+.artworkPrice {
+  font-size: 0.95rem;
+  color: #5d4037;
+  margin-bottom: 10px;
+}
+
+/* 🔹 Estrellas de calificación */
+.starWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.starContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.starContainer span {
+  font-size: 1.2rem;
+  color: #FFD700;
+}
+
+.ratingCount {
+  font-size: 0.85rem;
+  color: #6d4c41;
+}
+
+/* 🔹 Buscador estilizado */
+.searchInput {
+  width: 50%;
+  max-width: 380px;
+  padding: 9px 16px;
+  margin: 0 auto 25px auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 22px; /* 🔹 Más redondeado */
+  font-size: 0.95rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.searchInput:focus {
+  border-color: #d4af37;
+  outline: none;
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+}
+
+/* 🔹 Botón inferior */
+.viewMoreWrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.viewMoreButton {
+  display: inline-block;
+  background-color: #caa853;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.viewMoreButton:hover {
+  background-color: #b8953a;
+  transform: scale(1.05);
+}
+
+/* 🔹 Responsividad */
+@media (max-width: 760px) {
+  .cardsContainer,
+  .productGrid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+  }
+
+  .searchInput {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+}
+.starWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.starContainer span {
+  font-size: 1.3rem;
+}
+
+.ratingCount {
+  font-size: 0.9rem;
+  color: #6d4c41;
+}

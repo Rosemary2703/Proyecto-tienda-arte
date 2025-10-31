@@ -1,0 +1,42 @@
+/* ------------------------------------------ */
+/* AJUSTE GLOBAL DE ALTURA (MANDATORIO) */
+/* ------------------------------------------ */
+
+/* El HTML y el Body deben ocupar el 100% del viewport */
+html, body, #root { 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* El contenedor principal de React (App) debe estirarse y usar Flexbox */
+.art-store-app { /* Corresponde al div en App.jsx */
+    display: flex;
+    flex-direction: column; /* Apila Header, Main, Footer verticalmente */
+    min-height: 100vh; /* Asegura que la aplicación ocupe al menos toda la altura del viewport */
+    font-family: Arial, sans-serif; /* Fuente por defecto */
+    background-color: #f0f0f0; /* Fondo general de la app */
+}
+
+/* El área principal (Main) debe crecer para ocupar el espacio restante */
+.content-area { 
+    flex-grow: 1; /* Esto hace que el main tome todo el espacio libre */
+    padding: 20px; /* Un poco de padding a los lados */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------ */
+/* ESTILOS DE COMPONENTES GLOBALES */
+/* ------------------------------------------ */
+
+/* Opcional: Estilo de botones para un look unificado */
+button {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}

@@ -1,0 +1,20 @@
+.backContainer {
+  margin: 20px 0;
+}
+
+.backButton {
+  display: inline-block;
+  background-color: #d4af37;
+  color: #5c4033;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.backButton:hover {
+  background-color: #b89328;
+  color: #fff;
+  transform: translateY(-2px);
+}

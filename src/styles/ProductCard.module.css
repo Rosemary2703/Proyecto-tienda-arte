@@ -1,0 +1,186 @@
+/* 🔹 Contenedor de todas las tarjetas */
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* se adapta al ancho */
+  gap: 20px;
+  justify-items: center;
+  align-items: stretch;
+  padding: 20px;
+}
+
+/* 🔹 Estilo de cada tarjeta individual */
+.card {
+  background-color: #fffaf3; /* Fondo tipo lienzo */
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #f1e1b0;
+  max-width: 250px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Imagen */
+.image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* 🔹 Información del producto */
+.info {
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3e2723;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-size: 0.9rem;
+  color: #6d4c41;
+  font-weight: 500;
+}
+
+/* 🔹 Botones */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.button {
+  background-color: #caa853;
+  color: white;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.button:hover {
+  background-color: #b8953a;
+  transform: scale(1.05);
+}
+
+/* 🔹 Página principal */
+.homeContainer {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  color: #3e2723;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.errorMessage {
+  color: #b71c1c;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* 🔹 Botón inferior */
+.viewMoreWrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.viewMoreButton {
+  display: inline-block;
+  background-color: #caa853;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.viewMoreButton:hover {
+  background-color: #b8953a;
+  transform: scale(1.05);
+}
+
+/* ⭐ Sección de estrellas dentro de las tarjetas */
+.starWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+/* 🔹 Contenedor de las estrellas */
+.starContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.starContainer:hover {
+  transform: scale(1.1);
+}
+
+/* 🔹 Cada estrella individual */
+.starContainer span {
+  font-size: 1.3rem;
+  color: #ffd700;
+  cursor: pointer;
+  transition: transform 0.25s ease, text-shadow 0.25s ease;
+}
+
+/* 🔹 Efecto hover sobre cada estrella */
+.starContainer span:hover {
+  transform: scale(1.3);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+/* 🔹 Animación de brillo para estrellas activas */
+@keyframes starPulse {
+  0% {
+    text-shadow: 0 0 4px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 1);
+  }
+  100% {
+    text-shadow: 0 0 4px rgba(255, 215, 0, 0.4);
+  }
+}
+
+/* 🔹 Estrellas llenas (activas) */
+.activeStar {
+  animation: starPulse 2s infinite ease-in-out;
+}
+
+/* 🔹 Contador de valoraciones */
+.ratingCount {
+  font-size: 0.85rem;
+  color: #6d4c41;
+}

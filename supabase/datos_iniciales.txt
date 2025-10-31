@@ -1,0 +1,42 @@
+
+-- INSERTS DE ARTISTAS (10)
+
+insert into artists (name, bio) values
+('Salvador Dalí', 'Pintor surrealista español, conocido por sus imágenes oníricas y precisión técnica'),
+('Frida Kahlo', 'Pintora mexicana icónica del arte moderno y el surrealismo personal'),
+('Claude Monet', 'Pintor francés fundador del impresionismo, maestro de la luz'),
+('Vincent van Gogh', 'Pintor neerlandés postimpresionista con un estilo emocional y vibrante'),
+('Pablo Picasso', 'Artista español, cofundador del cubismo y pionero del arte moderno'),
+('Georgia O’Keeffe', 'Pintora estadounidense conocida por sus flores ampliadas y paisajes del desierto'),
+('René Magritte', 'Pintor belga surrealista, famoso por sus juegos visuales y paradojas'),
+('Henri Matisse', 'Pintor francés del fauvismo, amante del color y la simplicidad formal'),
+('Diego Rivera', 'Muralista mexicano con un profundo enfoque social y político'),
+('Joan Miró', 'Artista catalán con estilo abstracto y surrealista, de formas lúdicas y coloridas');
+
+-- INSERTS DE CATEGORÍAS (10)
+
+insert into categories (name, description) values
+('Surrealismo', 'Obras llenas de simbolismo, sueños y subconsciente'),
+('Arte Moderno', 'Estilos innovadores del siglo XX que rompen con la tradición'),
+('Impresionismo', 'Captura de la luz y el instante con pinceladas visibles'),
+('Postimpresionismo', 'Colores vibrantes y emoción subjetiva tras el impresionismo'),
+('Cubismo', 'Fragmentación geométrica de la realidad visual'),
+('Expresionismo', 'Deformación emocional para transmitir sentimientos intensos'),
+('Fauvismo', 'Colores puros y brillantes usados con libertad expresiva'),
+('Muralismo', 'Pintura monumental que comunica mensajes sociales'),
+('Abstracto', 'Formas y colores sin representación directa de la realidad'),
+('Pop Art', 'Arte inspirado en la cultura popular y el consumo masivo');
+
+-- INSERTS DE OBRAS DE ARTE (10)
+
+insert into artworks (title, description, price, stock, image_url, category_id, artist_id) values
+('La Persistencia de la Memoria', 'Relojes derretidos que desafían la lógica del tiempo', 1500000.00, 1, 'https://example.com/dali1.jpg', 1, 1),
+('Autorretrato con Collar de Espinas', 'Reflexión de dolor y resistencia en un autorretrato simbólico', 2000000.00, 1, 'https://example.com/frida1.jpg', 2, 2),
+('Impresión, sol naciente', 'Paisaje marino con bruma y luz, símbolo del impresionismo', 1800000.00, 1, 'https://example.com/monet1.jpg', 3, 3),
+('Noche Estrellada', 'Cielos giratorios y luces vibrantes sobre Saint-Rémy', 2200000.00, 1, 'https://example.com/van-gogh1.jpg', 4, 4),
+('Las Señoritas de Avignon', 'Inicio del cubismo con figuras geométricas y perspectivas rotas', 3000000.00, 1, 'https://example.com/picasso1.jpg', 5, 5),
+('Jimson Weed/White Flower No.1', 'Flor monumental que resalta la fuerza de la naturaleza', 1400000.00, 1, 'https://example.com/okeeffe1.jpg', 2, 6),
+('La Traición de las Imágenes', 'Una pipa que niega ser una pipa: crítica visual al lenguaje', 1600000.00, 1, 'https://example.com/magritte1.jpg', 1, 7),
+('Mujer con Sombrero', 'Retrato expresivo de su esposa, lleno de color y libertad formal', 1300000.00, 1, 'https://example.com/matisse1.jpg', 7, 8),
+('El Hombre en la Encrucijada', 'Mural rechazado por su contenido político, símbolo de lucha obrera', 2100000.00, 1, 'https://example.com/rivera1.jpg', 8, 9),
+('El Carnaval del Arlequín', 'Sueño colorido y lleno de criaturas abstractas en movimiento', 1700000.00, 1, 'https://example.com/miro1.jpg', 9, 10);

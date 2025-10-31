@@ -1,0 +1,59 @@
+-- ==========================
+-- 🧩 3️⃣ POLÍTICAS
+-- ==========================
+
+-- 🔹 Profiles
+create policy "los usuarios pueden ver su perfil"
+on profiles for select
+to authenticated
+using (auth.uid() = id);
+
+create policy "los usuarios pueden actualizar su perfil"
+on profiles for update
+to authenticated
+using (auth.uid() = id)
+with check (auth.uid() = id);
+
+-- 🔹 Artworks
+create policy "ver obras activas"
+on artworks for select
+to public
+using (is_active = true);
+
+create policy "admin puede gestionar obras"
+on artworks for all
+to authenticated
+using (auth.jwt() ->> 'role' = 'admin')
+with check (auth.jwt() ->> 'role' = 'admin');
+
+-- 🔹 Orders
+create policy "insertar pedido propio"
+on orders for insert
+to authenticated
+with check (auth.uid() = user_id);
+
+create policy "ver pedidos propios"
+on orders for select
+to authenticated
+using (auth.uid() = user_id);
+
+-- 🔹 Order Items
+create policy "insertar items de pedido propio"
+on order_items for insert
+to authenticated
+with check (
+  exists (
+    select 1 from orders o
+    where o.id = order_id and o.user_id = auth.uid()
+  )
+);
+
+create policy "ver items propios"
+on order_items for select
+to authenticated
+using (
+  exists (
+    select 1 from orders o
+    where o.id = order_id and o.user_id = auth.uid()
+  )
+);

@@ -1,0 +1,7 @@
+RLS
+
+
+alter table profiles enable row level security;
+alter table artworks enable row level security;
+alter table orders enable row level security;
+alter table order_items enable row level security;

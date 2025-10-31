@@ -1,0 +1,80 @@
+-- ===============================
+-- 🖼️ TIENDA DE ARTE: BASE DE DATOS
+-- ===============================
+
+-- 🧑‍💻 PERFIL DE USUARIO (enlace con Auth)
+create table profiles (
+  id uuid references auth.users(id) primary key,
+  name text,
+  phone text,
+  address text,
+  role text check (role in ('admin', 'user')) not null default 'user',
+  created_at timestamp default now()
+);
+
+
+-- 🧑‍🎨 ARTISTAS
+create table artists (
+  id bigint generated always as identity primary key,
+  name text not null,
+  bio text,
+  created_at timestamp default now()
+);
+
+-- 🎨 CATEGORÍAS (Ej: surrealismo, abstracto, impresionismo)
+create table categories (
+  id bigint generated always as identity primary key,
+  name text not null,
+  description text,
+  created_at timestamp default now()
+);
+
+-- 🖼️ OBRAS DE ARTE
+create table artworks (
+  id bigint generated always as identity primary key,
+  title text not null,
+  description text,
+  price numeric(10,2) not null check (price >= 0),
+  stock integer not null check (stock >= 0),
+  image_url text,
+  category_id bigint references categories(id) on delete set null,
+  artist_id bigint references artists(id) on delete set null,
+  is_active boolean default true,
+  created_at timestamp default now()
+);
+
+-- 🛒 CARRITO (uno por usuario)
+create table carts (
+  id bigint generated always as identity primary key,
+  user_id uuid references auth.users(id) on delete cascade,
+  created_at timestamp default now(),
+  unique(user_id)
+);
+
+-- 🧾 ITEMS DEL CARRITO
+create table cart_items (
+  id bigint generated always as identity primary key,
+  cart_id bigint references carts(id) on delete cascade,
+  artwork_id bigint references artworks(id),
+  quantity integer not null check (quantity > 0),
+  created_at timestamp default now()
+);
+
+-- 🧺 PEDIDOS
+create table orders (
+  id bigint generated always as identity primary key,
+  user_id uuid references auth.users(id) on delete cascade,
+  total numeric(10,2) not null check (total >= 0),
+  status text default 'pendiente', -- pendiente, pagado, enviado, entregado
+  created_at timestamp default now()
+);
+
+-- 📦 DETALLE DEL PEDIDO
+create table order_items (
+  id bigint generated always as identity primary key,
+  order_id bigint references orders(id) on delete cascade,
+  artwork_id bigint references artworks(id),
+  quantity integer not null check (quantity > 0),
+  price numeric(10,2) not null check (price >= 0),
+  created_at timestamp default now()
+);

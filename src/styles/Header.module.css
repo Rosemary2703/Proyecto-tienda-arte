@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #faf3e0;
+  padding: 10px 20px;
+  border-bottom: 2px solid #d4af37;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #5c4033;
+  font-weight: bold;
+}
+
+.nav a {
+  margin-left: 15px;
+  color: #5c4033;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: #d4af37;
+}
+
+/* ✅ Botón de Cerrar Sesión */
+.logoutButton {
+  margin-left: 15px;
+  background-color: #5c4033;
+  color: #faf3e0;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.logoutButton:hover {
+  background-color: #7b553e;
+}
+
+/* ✅ Botón Panel Admin */
+.adminLink {
+  margin-left: 15px;
+  background-color: #d4af37;
+  color: #5c4033;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.adminLink:hover {
+  background-color: #b89328;
+  color: #fff;
+}
+
